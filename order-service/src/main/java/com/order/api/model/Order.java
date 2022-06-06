@@ -9,7 +9,7 @@ public class Order {
 	private Date orderDate;
 	private float totalAmount;
 	private Status status;
-	private List<OrderLines> orderLines;
+	private List<OrderLine> orderLines;
 
 	public int getOrderId() {
 		return orderId;
@@ -43,11 +43,11 @@ public class Order {
 		this.status = status;
 	}
 
-	public List<OrderLines> getOrderLines() {
+	public List<OrderLine> getOrderLines() {
 		return orderLines;
 	}
 
-	public void setOrderLines(List<OrderLines> orderLines) {
+	public void setOrderLines(List<OrderLine> orderLines) {
 		this.orderLines = orderLines;
 	}
 

@@ -3,7 +3,7 @@ package com.order.api.model;
 import java.util.Date;
 import java.util.List;
 
-public class OrderLines {
+public class OrderLine {
 
 	private int id;
 	private List<Item> items;

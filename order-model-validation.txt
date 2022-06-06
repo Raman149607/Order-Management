@@ -1,0 +1,57 @@
+Order
+
+@Id
+private int orderId;
+@NotNull(message = ExceptionConstants.INVALID_START_DATE)
+@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
+private Date orderDate;
+@Min(value = 0, message = "price should not be negative")
+private float totalAmount;
+
+
+***********************************
+
+Address
+
+@Id
+private int id;
+@Min(value = 6, message = "pincode should be at least 6 digits")
+private int zipCode;
+@NotEmpty
+private String state;
+@NotEmpty
+private String country;
+
+**************************************
+
+OrderLines
+
+@Id
+private int id;
+
+@NotNull(message = ExceptionConstants.INVALID_START_DATE)
+@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy")
+private Date eta;
+
+*****************************************
+Items
+
+@Id
+private int id;
+@NotBlank
+private String itemName;
+@Min(value = 0, message = "price should not be negative")
+private float price;
+@Min(value = 0, message = "qunatity should not be negative and can be 0 as out of stock")
+private int quantity;
+
+
+
+
+
+
+
+
+
+
+

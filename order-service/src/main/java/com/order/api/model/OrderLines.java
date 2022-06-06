@@ -6,7 +6,7 @@ import java.util.List;
 public class OrderLines {
 
 	private int id;
-	private Item items;
+	private List<Item> items;
 	private Date eta;
 	private OrderLinesStatus statusLine;
 	private List<Address> addresses;
@@ -17,14 +17,6 @@ public class OrderLines {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Item getItems() {
-		return items;
-	}
-
-	public void setItems(Item items) {
-		this.items = items;
 	}
 
 	public Date getEta() {
@@ -49,6 +41,14 @@ public class OrderLines {
 
 	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
+	}
+
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 
 }

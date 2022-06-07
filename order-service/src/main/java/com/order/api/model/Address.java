@@ -1,19 +1,19 @@
 package com.order.api.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "address")
 public class Address {
 
-	private int id;
+	@Min(value = 6, message = "pincode should be at least 6 digits")
 	private int zipCode;
+	@NotEmpty
 	private String state;
+	@NotEmpty
 	private String country;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public int getZipCode() {
 		return zipCode;

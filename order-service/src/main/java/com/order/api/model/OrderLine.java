@@ -3,21 +3,30 @@ package com.order.api.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@Document(collection = "orderline")
 public class OrderLine {
 
-	private int id;
+	@Valid
 	private List<Item> items;
+	@NotNull
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date eta;
+	@Enumerated(EnumType.STRING)
 	private OrderLinesStatus statusLine;
+	@Valid
 	private List<Address> addresses;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public Date getEta() {
 		return eta;

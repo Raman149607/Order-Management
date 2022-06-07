@@ -1,19 +1,19 @@
 package com.order.api.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "item")
 public class Item {
 
-	private int id;
+	@NotBlank
 	private String itemName;
+	@Min(value = 0, message = "price should not be negative")
 	private float price;
+	@Min(value = 0, message = "qunatity should not be negative and can be 0 as out of stock")
 	private int quantity;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getItemName() {
 		return itemName;

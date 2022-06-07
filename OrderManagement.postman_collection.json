@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "5e3747f5-fd64-4374-a660-86d567dc4725",
+		"name": "OrderManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderDate\": \"2022/06/07\",\r\n    \"totalAmount\": 300,\r\n    \"status\": \"OPEN\",\r\n    \"orderLines\": [\r\n        {\r\n            \"items\": [\r\n                {\r\n                    \"itemName\": \"Iphone\",\r\n                    \"price\": 255,\r\n                    \"quantity\": 2\r\n                }\r\n            ],\r\n            \"eta\": \"2022/06/22\",\r\n            \"statusLine\": \"OPEN\",\r\n            \"addresses\": [\r\n                {\r\n                    \"zipCode\": 833218,\r\n                    \"state\": \"Karnataka\",\r\n                    \"country\": \"India\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9019/api/orderdetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9019",
+					"path": [
+						"api",
+						"orderdetails"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddOrder",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderDate\": \"2022/06/07\",\r\n    \"totalAmount\": 300,\r\n    \"status\": \"OPEN\",\r\n    \"orderLines\": [\r\n        {\r\n            \"items\": [\r\n                {\r\n                    \"itemName\": \"Iphone\",\r\n                    \"price\": 255,\r\n                    \"quantity\": 2\r\n                }\r\n            ],\r\n            \"eta\": \"2022/06/22\",\r\n            \"statusLine\": \"OPEN\",\r\n            \"addresses\": [\r\n                {\r\n                    \"zipCode\": 833218,\r\n                    \"state\": \"Karnataka\",\r\n                    \"country\": \"India\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9019/api/orderdetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9019",
+							"path": [
+								"api",
+								"orderdetails"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jun 2022 12:38:53 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "OrderDetails Added Successfully"
+				}
+			]
+		},
+		{
+			"name": "GetOrderById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9019/api/orderdetails/629f46dd3beeff56c35cf14e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9019",
+					"path": [
+						"api",
+						"orderdetails",
+						"629f46dd3beeff56c35cf14e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetOrderById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9019/api/orderdetails/629f46dd3beeff56c35cf14e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9019",
+							"path": [
+								"api",
+								"orderdetails",
+								"629f46dd3beeff56c35cf14e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jun 2022 12:43:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"629f46dd3beeff56c35cf14e\",\n    \"orderDate\": \"2022/06/07\",\n    \"totalAmount\": 300,\n    \"status\": \"OPEN\",\n    \"orderLines\": [\n        {\n            \"items\": [\n                {\n                    \"itemName\": \"Iphone\",\n                    \"price\": 255,\n                    \"quantity\": 2\n                }\n            ],\n            \"eta\": \"2022/06/22\",\n            \"statusLine\": \"OPEN\",\n            \"addresses\": [\n                {\n                    \"zipCode\": 833218,\n                    \"state\": \"Karnataka\",\n                    \"country\": \"India\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GetOrderByZipCode",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GetOrderByZipCode",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9019/api/833217",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9019",
+							"path": [
+								"api",
+								"833217"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jun 2022 12:58:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"629f4a703beeff56c35cf157\",\n        \"orderDate\": \"2022/06/07\",\n        \"totalAmount\": 300,\n        \"status\": \"OPEN\",\n        \"orderLines\": [\n            {\n                \"items\": [\n                    {\n                        \"itemName\": \"Iphone\",\n                        \"price\": 255,\n                        \"quantity\": 2\n                    }\n                ],\n                \"eta\": \"2022/06/22\",\n                \"statusLine\": \"OPEN\",\n                \"addresses\": [\n                    {\n                        \"zipCode\": 833217,\n                        \"state\": \"Karnataka\",\n                        \"country\": \"India\"\n                    }\n                ]\n            }\n        ]\n    }\n]"
+				}
+			]
+		}
+	]
+}

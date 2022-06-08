@@ -12,10 +12,7 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/api/**
-        - id: storelocator-service
-          uri: lb://STORELOCATOR-SERVICE
-          predicates:
-            - Path=/api/**
+
             
     
 eureka:

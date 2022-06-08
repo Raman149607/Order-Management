@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"orderDate\": \"2022/06/07\",\r\n    \"totalAmount\": 300,\r\n    \"status\": \"OPEN\",\r\n    \"orderLines\": [\r\n        {\r\n            \"items\": [\r\n                {\r\n                    \"itemName\": \"Iphone\",\r\n                    \"price\": 255,\r\n                    \"quantity\": 2\r\n                }\r\n            ],\r\n            \"eta\": \"2022/06/22\",\r\n            \"statusLine\": \"OPEN\",\r\n            \"addresses\": [\r\n                {\r\n                    \"zipCode\": 833218,\r\n                    \"state\": \"Karnataka\",\r\n                    \"country\": \"India\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"orderDate\": \"2022/06/07\",\r\n    \"totalAmount\": 5000,\r\n    \"status\": \"OPEN\",\r\n    \"orderLines\": [\r\n        {\r\n            \"items\": [\r\n                {\r\n                    \"itemName\": \"Iphone\",\r\n                    \"price\": 255,\r\n                    \"quantity\": 2\r\n                }\r\n            ],\r\n            \"eta\": \"2022/06/22\",\r\n            \"statusLine\": \"OPEN\",\r\n            \"addresses\": [\r\n                {\r\n                    \"zipCode\": 833219,\r\n                    \"state\": \"Karnataka\",\r\n                    \"country\": \"India\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,12 +20,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9019/api/orderdetails",
+					"raw": "http://localhost:8989/api/orderdetails",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9019",
+					"port": "8989",
 					"path": [
 						"api",
 						"orderdetails"
@@ -40,7 +40,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"orderDate\": \"2022/06/07\",\r\n    \"totalAmount\": 300,\r\n    \"status\": \"OPEN\",\r\n    \"orderLines\": [\r\n        {\r\n            \"items\": [\r\n                {\r\n                    \"itemName\": \"Iphone\",\r\n                    \"price\": 255,\r\n                    \"quantity\": 2\r\n                }\r\n            ],\r\n            \"eta\": \"2022/06/22\",\r\n            \"statusLine\": \"OPEN\",\r\n            \"addresses\": [\r\n                {\r\n                    \"zipCode\": 833218,\r\n                    \"state\": \"Karnataka\",\r\n                    \"country\": \"India\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"orderDate\": \"2022/06/07\",\r\n    \"totalAmount\": 5000,\r\n    \"status\": \"OPEN\",\r\n    \"orderLines\": [\r\n        {\r\n            \"items\": [\r\n                {\r\n                    \"itemName\": \"Iphone\",\r\n                    \"price\": 255,\r\n                    \"quantity\": 2\r\n                }\r\n            ],\r\n            \"eta\": \"2022/06/22\",\r\n            \"statusLine\": \"OPEN\",\r\n            \"addresses\": [\r\n                {\r\n                    \"zipCode\": 833219,\r\n                    \"state\": \"Karnataka\",\r\n                    \"country\": \"India\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -48,12 +48,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9019/api/orderdetails",
+							"raw": "http://localhost:8989/api/orderdetails",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9019",
+							"port": "8989",
 							"path": [
 								"api",
 								"orderdetails"
@@ -69,20 +69,12 @@
 							"value": "text/plain;charset=UTF-8"
 						},
 						{
-							"key": "Content-Length",
-							"value": "31"
-						},
-						{
 							"key": "Date",
-							"value": "Tue, 07 Jun 2022 12:38:53 GMT"
+							"value": "Wed, 08 Jun 2022 11:46:02 GMT"
 						},
 						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
+							"key": "content-length",
+							"value": "31"
 						}
 					],
 					"cookie": [],
@@ -96,12 +88,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9019/api/orderdetails/629f46dd3beeff56c35cf14e",
+					"raw": "http://localhost:8989/api/orderdetails/629f46dd3beeff56c35cf14e",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9019",
+					"port": "8989",
 					"path": [
 						"api",
 						"orderdetails",
@@ -116,12 +108,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9019/api/orderdetails/629f46dd3beeff56c35cf14e",
+							"raw": "http://localhost:8989/api/orderdetails/629f46dd3beeff56c35cf14e",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9019",
+							"port": "8989",
 							"path": [
 								"api",
 								"orderdetails",
@@ -134,24 +126,16 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
 							"key": "Date",
-							"value": "Tue, 07 Jun 2022 12:43:58 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
+							"value": "Wed, 08 Jun 2022 11:46:38 GMT"
 						}
 					],
 					"cookie": [],
@@ -163,7 +147,19 @@
 			"name": "GetOrderByZipCode",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/api/833217",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"833217"
+					]
+				}
 			},
 			"response": [
 				{
@@ -172,12 +168,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9019/api/833217",
+							"raw": "http://localhost:8989/api/833217",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9019",
+							"port": "8989",
 							"path": [
 								"api",
 								"833217"
@@ -189,24 +185,16 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
 							"key": "Content-Type",
 							"value": "application/json"
 						},
 						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
 							"key": "Date",
-							"value": "Tue, 07 Jun 2022 12:58:04 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
+							"value": "Wed, 08 Jun 2022 11:47:09 GMT"
 						}
 					],
 					"cookie": [],

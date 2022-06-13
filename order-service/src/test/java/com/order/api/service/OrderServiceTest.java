@@ -1,6 +1,7 @@
 package com.order.api.service;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -22,7 +23,7 @@ class OrderServiceTest {
 
 	@Test
 	void testSaveOrderDetails() {
-		When(orderRepository.save(order)).thenReturn
+		when(orderRepository.insert(order)).thenReturn(order);
 		Order saveOrderDetails = orderService.saveOrderDetails(order);
 		assertNotNull(saveOrderDetails);
 		

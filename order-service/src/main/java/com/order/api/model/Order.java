@@ -5,23 +5,15 @@ import java.util.List;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-@Document(collection = "order")
 public class Order {
-
-	@Id
-	private ObjectId id;
 	@NotNull
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -32,14 +24,6 @@ public class Order {
 	private Status status;
 	@Valid
 	private List<OrderLine> orderLines;
-
-	public String getId() {
-		return id.toHexString();
-	}
-
-	public void setId(ObjectId id) {
-		this.id = id;
-	}
 
 	public Date getOrderDate() {
 		return orderDate;

@@ -2,10 +2,8 @@ package com.order.api;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThrows;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,7 +31,7 @@ import com.order.api.model.Status;
 import com.order.api.service.OrderService;
 
 @SpringBootTest
-public class OrderServiceApplicationTests {
+class OrderServiceApplicationTests {
 
 	private static Logger logger = LogManager.getLogManager().getLogger(OrderServiceApplicationTests.class.getName());
 
@@ -47,7 +45,7 @@ public class OrderServiceApplicationTests {
 	OrderController orderController;
 
 	@Test
-	public void testCreateOrder() {
+	void testCreateOrder() {
 		Order order = new Order();
 		order.setTotalAmount(4000.0f);
 		when(orderService.saveOrderDetails(order)).thenReturn(order);
@@ -58,21 +56,21 @@ public class OrderServiceApplicationTests {
 	}
 
 	@Test
-	public void testCreateOrder_Should_throw_404_NOT_Found_When_Null() {
+	void testCreateOrder_Should_throw_404_NOT_Found_When_Null() {
 		Order order = null;
 		ResponseEntity<String> createOrder = orderController.createOrder(order);
 		assertNotNull(createOrder);
 	}
 
 	@Test
-	public void testgetOrderById_Should_throw_404_NOT_Found_When_Null() {
+	void testgetOrderById_Should_throw_404_NOT_Found_When_Null() {
 		Order order = null;
 		ResponseEntity<Order> orderById = orderController.getOrderById("123");
 		assertNotNull(orderById);
 	}
 	
 	@Test
-	public void testgetOrderById() {
+	void testgetOrderById() {
 		Optional<Order> createOrder = Optional.of(createOrder());
 		when(orderService.orderDetailsById("123")).thenReturn(createOrder);
 		ResponseEntity<Order> orderById = orderController.getOrderById("123");
@@ -82,7 +80,7 @@ public class OrderServiceApplicationTests {
 	
 
 	@Test
-	public void testgetOrderDetailsByZipCode_Should_throw_404_NOT_Found_When_Null(){
+	void testgetOrderDetailsByZipCode_Should_throw_404_NOT_Found_When_Null(){
 		when(orderService.orderDetailsByZipCode(833218)).thenReturn(order);
 		ResponseEntity<List<Order>> orderByZipCode = orderController.getOrderDetailsByZipCode(833218);
 		verify(orderService).orderDetailsByZipCode(833218);
@@ -91,7 +89,7 @@ public class OrderServiceApplicationTests {
 	}
 	
 	@Test
-	public void testgetOrderDetailsByZipCode(){ 
+		void testgetOrderDetailsByZipCode(){ 
 		List<Order> orderData = new ArrayList<>();
 		orderData.add(createOrder());
 		when(orderService.orderDetailsByZipCode(833218)).thenReturn(orderData);

@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.apache.commons.lang.NullArgumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,10 +30,11 @@ public class OrderController {
 	@PostMapping("/orderdetails")
 	public ResponseEntity<String> createOrder(@Valid @RequestBody Order order) {
 
-		try {
+		if(order!=null) {
 			orderService.saveOrderDetails(order);
 			return ResponseEntity.status(HttpStatus.CREATED).body("OrderDetails Added Successfully");
-		} catch (Exception e) {
+		}
+		 else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("OrderDetails Cannot Be added");
 		}
 	}
